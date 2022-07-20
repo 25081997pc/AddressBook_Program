@@ -134,6 +134,18 @@ namespace AddressBook_Program
                 Console.WriteLine("Address book is Empty");
             }
         }
+        //This method is used to remove the Person contact from Address Book.
+        public void remove(string Firstname)
+        {
+            for(int i = 0; i < People.Count; i++)
+            {
+                if (People[i].FirstName.ToLower() == Firstname.ToLower())
+                {
+                    People.RemoveAt(i);
+                }
+            }
+            ListPeople();
+        }
     }
     public class Person
     {
