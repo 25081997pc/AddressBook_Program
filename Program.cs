@@ -24,7 +24,9 @@
                         createContact.ListPeople();
                         break;
                     case "edit":
-                        createContact.Edit();
+                        Console.WriteLine("Enter the Name of Person");
+                        string Name = Console.ReadLine();
+                        createContact.edit(Name);
                         break;
                 }
             }
