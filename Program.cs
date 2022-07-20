@@ -23,6 +23,9 @@
                     case "list":
                         createContact.ListPeople();
                         break;
+                    case "edit":
+                        createContact.Edit();
+                        break;
                 }
             }
             Console.WriteLine("Enter \'exit\' to Program End");
