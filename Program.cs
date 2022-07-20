@@ -28,6 +28,11 @@
                         string Name = Console.ReadLine();
                         createContact.edit(Name);
                         break;
+                    case "remove":
+                        Console.WriteLine("Enter the First Name of Person");
+                        string firstName = Console.ReadLine();
+                        createContact.remove(firstName);
+                        break;
                 }
             }
             Console.WriteLine("Enter \'exit\' to Program End");
