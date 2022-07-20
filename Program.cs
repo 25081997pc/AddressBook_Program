@@ -1,12 +1,31 @@
 ﻿namespace AddressBook_Program
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to Address Book Program");
+
             CreateContact createContact = new CreateContact();
-            createContact.AddPerson();
-            createContact.ListPeople();
+
+            string command = "";
+            while (command != "exit")
+            {
+                Console.Clear();
+                Console.WriteLine("Please enter a command: ");
+                command = Console.ReadLine().ToLower();
+
+                switch (command)
+                {
+                    case "add":
+                        createContact.AddPerson();
+                        break;
+                    case "list":
+                        createContact.ListPeople();
+                        break;
+                }
+            }
+            Console.WriteLine("Enter \'exit\' to Program End");
         }
     }
 }
