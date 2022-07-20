@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Address Book Program");
+            CreateContact createContact = new CreateContact();
+            createContact.AddPerson();
+            createContact.ListPeople();
         }
     }
 }
