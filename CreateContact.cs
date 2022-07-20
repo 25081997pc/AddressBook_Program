@@ -72,70 +72,69 @@ namespace AddressBook_Program
             Console.WriteLine("\nPress any key to continue.");
             Console.ReadKey();
         }
-        public void Edit()
+        //This method is used to Edit the Details of the Person of the Address Book 
+        public void edit(string Name)
         {
             if (People.Count != 0)
             {
-                string edit = Console.ReadLine();
                 foreach (var person in People)
                 {
                     PrintPerson(person);
-                    if (person.FirstName.ToLower() == edit.ToLower())
+                    if (person.FirstName.ToLower() == Name.ToLower())
                     {
-                        while (true)
+                        Console.WriteLine("Which thing do you want to Change");
+                        Console.WriteLine("Enter the number:");
+                        int number = Convert.ToInt32(Console.ReadLine());
+                        switch (number)
                         {
-                            Console.WriteLine("Changes");
-                            Console.WriteLine("Enter the number:");
-                            int number = Convert.ToInt32(Console.ReadLine());
-                            switch (number)
-                            {
-                                case 1:
-                                    Console.WriteLine("Enter New First name: ");
-                                    person.FirstName = Console.ReadLine();
-                                    break;
-                                case 2:
-                                    Console.WriteLine("Enter New Last name: ");
-                                    person.LastName = Console.ReadLine();
-                                    break;
-                                case 3:
-                                    Console.WriteLine("Enter New Phone Number: ");
-                                    person.PhoneNumber = Console.ReadLine();
-                                    break;
-                                case 4:
-                                    Console.WriteLine("Enter New Area: ");
-                                    person.Area = Console.ReadLine();
-                                    Console.WriteLine("Enter New City: ");
-                                    person.City = Console.ReadLine();
-                                    Console.WriteLine("Enter New State: ");
-                                    person.State = Console.ReadLine();
-                                    Console.WriteLine("Enter New Zip: ");
-                                    person.Zip = Console.ReadLine();
-                                    break;
-                                case 5:
-                                    AddPerson();
-                                    break;
-                                default:
-                                    Console.WriteLine("InValid Number");
-                                    break;
-                            }
-                            return;
+                            case 1:
+                                Console.WriteLine("Enter New First name: ");
+                                person.FirstName = Console.ReadLine();
+                                break;
+                            case 2:
+                                Console.WriteLine("Enter New Last name: ");
+                                person.LastName = Console.ReadLine();
+                                break;
+                            case 3:
+                                Console.WriteLine("Enter New Phone Number: ");
+                                person.PhoneNumber = Console.ReadLine();
+                                break;
+                            case 4:
+                                Console.WriteLine("Enter New Email: ");
+                                person.Email = Console.ReadLine();
+                                break;
+                            case 5:
+                                Console.WriteLine("Enter New Area: ");
+                                person.Area = Console.ReadLine();
+                                Console.WriteLine("Enter New City: ");
+                                person.City = Console.ReadLine();
+                                Console.WriteLine("Enter New State: ");
+                                person.State = Console.ReadLine();
+                                Console.WriteLine("Enter New Zip: ");
+                                person.Zip = Console.ReadLine();
+                                break;
+                            case 6:
+                                AddPerson();
+                                break;
+
+                            default:
+                                Console.WriteLine("InValid Number");
+                                break;
                         }
+                        return;
                     }
                     else
                     {
-                        Console.Write("Enter valid name:");
+                        Console.Write("Enter Valid Name:");
                     }
-
                 }
             }
             else
             {
                 Console.WriteLine("Address book is Empty");
             }
-
         }
     }
-
     public class Person
     {
         public string FirstName { get; set; }
