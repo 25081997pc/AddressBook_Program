@@ -14,7 +14,6 @@
                 Console.Clear();
                 Console.WriteLine("Please enter a command: ");
                 command = Console.ReadLine().ToLower();
-
                 switch (command)
                 {
                     case "add":
